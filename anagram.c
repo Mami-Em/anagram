@@ -20,7 +20,7 @@ int main() {
 int c_f_anagram(string a, string b) {
     for (int i = 0; i < strlen(a); i++)
     {
-        // funtion to correct
+        // funtion to complete
         printf("%c\n", a[i]);
     }
     return 0;
