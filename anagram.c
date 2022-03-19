@@ -5,8 +5,8 @@
 int anagram(string a,string b);
 
 int main() {
-    string a = get_string("Insert the first word: ");
-    string b = get_string("Insert the word to comparee it with: ");
+    string a = get_string("Insert the word: ");
+    string b = get_string("Compare with: ");
     if (strlen(a) == strlen(b))
     {
         /* code */
@@ -18,11 +18,20 @@ int main() {
 }
 
 int anagram(string a, string b) {
+    char val[strlen(a)];
+    int t, f;
     for (int i = 0; i < strlen(a); i++)
     {
-        // funtion to complete
-        printf("%c\n", a[i]);
+        for (int j = 0; j < strlen(a); j++)
+        {
+            if (a[i] == b[j])
+                t ++;
+            else
+                f ++;
+        }
+        
     }
+    printf("%i true\n%i fale\n", t,f);
     return 0;
     
 }
