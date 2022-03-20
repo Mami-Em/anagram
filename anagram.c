@@ -13,29 +13,27 @@ int main() {
 
 int anagram(string a, string b) {
     char val;
-    string new;
-
+    int same = 0;
+    
     for (int i = 0; i < strlen(a); i++) {
-        // pick one by one each value in A
+        
+        // pick one by one each value in A including spaces
         val = a[i];
+        if (a[i] == ' ')
+            val = ' ';
+        
         for (int j = 0; j < strlen(b); j++)
         {
             // check if each word in A appear in B
-            if (val == b[j]) {
-                new[i] = val;
-            }
+            if (val == b[j]) 
+                same ++;
         } 
     }
-
-    // if new str and first str are same
-    if (strcmp(new, a) == 0)
-        printf("They are anagrams\n ");
-
-    // if there are similarities
-    else if (strlen(new) > 1)
-        /* -1 bc there is already one value by default inside of the new str */
-        printf("There are only %lu words that matches!\n", strlen(new)-1);
     
+    // if new str and first str are same
+    if (same == strlen(a))
+        printf("They are anagrams\n");
+
     // not anagrams
     else
         printf("They are not anagrams!\n");
