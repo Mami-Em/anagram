@@ -6,7 +6,6 @@
 #define SIZ 1
 
 int shorting(char *val);
-void alana(char *val, int miala);
 
 int main() {
     char *val = get_string("Insert: ");
@@ -15,35 +14,36 @@ int main() {
 }
 
 int shorting(char *val) {
-    char jerena;
-
+    // char new_arr[SIZ] = "";
+    char to_check;
+    int count = 0;
     // if char not inside the new array yet, insert it
     for (int i = 0; i < strlen(val); i++)
     {
         
-        jerena = val[i];
+        to_check = val[i];
         /* code */
         for (int j = 0; j < strlen(val); j++)
         {
             /* code */
-            if (jerena == val[j])
+            if (to_check == val[j])
                 /* code */
-                alana(val, j);
+                count ++;
+                if (count>1)
+                {
+                    // keep only one
+                    val[j] = '\0';
+                }
         }
+        
+        
+        
+        printf("%c %i", to_check, count);
+        printf("\n");
+        
+        count = 0;
     }
-    printf("%s\n", val);
+    // printf("%s\n", new_arr);
     
     return 0;
-}
-
-void alana(char *val, int miala) {
-    char *val_f = val;
-    // work on
-    for (int i = 0; i < strlen(val); i++)
-    {
-        /* code */
-        if ((i =! miala))
-            *val_f++ = *val;        
-    }
-    *val_f = '\0';
 }
